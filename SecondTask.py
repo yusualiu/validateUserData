@@ -5,7 +5,7 @@ def collectUser():
   lastname = input('What is your Lastname: ')
   email = input('What is your Email: ')
   
-  container = {'firstname':firstname,'lastname':lastname,'email':email}  
+  containerDict = {'firstname':firstname,'lastname':lastname,'email':email}  
   
   # generate user password
   userFirstLetters =firstname[:2]
@@ -24,7 +24,7 @@ def collectUser():
       userPassword = input('Please put your password(must be greater than 7 characters) ')
       papasswordLength = len(userPassword)
     print(f'Your Firstname is {firstname} \nYour Lastname is {lastname} \nYour Email is {email} \n')
-  return container
+  return containerDict
     
 
 # random string generator
@@ -37,26 +37,31 @@ def randomised(stringLength=5):
   randomStrings = ''.join(listCharacter) # convert list to string
   return randomStrings
 
-  
-    
-# users container
-externalContainer = {}
-containerLength = 0
-while containerLength < 1:
-  container = collectUser()  #each user details
-  externalContainer.update(container)
-  containerLength += 1
 
+
+
+#store more than one user details
+container = []
+counter = 1
+while counter:
+  item = collectUser()
+  container.append(item)
+  counter = 0
+  
+print('User has been added\n--------------')
+
+for item in container:
+  print(item)
 
 # print(externalContainer)
-print('The users container is shown below\n--------------')
-for key,item in externalContainer.items():
-  print(f"Your {key} is {item}")
+# print('The users container is shown below\n--------------')
+# for key,item in externalContainer.items():
+#   print(f"Your {key} is {item}")
  
 
 
 
-# print(collectUser())
+
 
 
 
