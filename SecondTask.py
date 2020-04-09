@@ -53,10 +53,6 @@ print('User has been added\n--------------')
 for item in container:
   print(item)
 
-# print(externalContainer)
-# print('The users container is shown below\n--------------')
-# for key,item in externalContainer.items():
-#   print(f"Your {key} is {item}")
  
 
 
